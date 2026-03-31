@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Formations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="formations">
+    <h2>Formations</h2>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="cybersecurite">Cybersécurité</button>
+      <button class="filter-btn" data-filter="developpement-web">Développement Web</button>
+      <button class="filter-btn" data-filter="intelligence-artificielle">Intelligence Artificielle</button>
+      <button class="filter-btn" data-filter="systemes-reseaux">Systèmes &amp; Réseaux</button>
+      <button class="filter-btn" data-filter="autre">Autre</button>
+      <button class="filter-btn" data-filter="attestation">Attestation</button>
+      <button class="filter-btn" data-filter="certification">Certification</button>
+      <button class="filter-btn" data-filter="diplome">Diplôme</button>
+    </div>
+
+    <div class="formations-grid">
+
+      <article class="formation-card" data-category="autre certification">
+        <div class="image-box">
+          <img src="img/f3.png" alt="Certificat individuel de participation à la journée défense et citoyenneté">
+        </div>
+        <h3>Certificat individuel de participation à la journée défense et citoyenneté</h3>
+      </article>
+
+      <article class="formation-card" data-category="autre diplome">
+        <div class="image-box">
+          <img src="img/f2.png" alt="Baccalauréat Technologique">
+        </div>
+        <h3>Baccalauréat Technologique</h3>
+      </article>
+
+      <article class="formation-card" data-category="autre diplome">
+        <div class="image-box">
+          <img src="img/f1.png" alt="Brevet des collèges">
+        </div>
+        <h3>Brevet des collèges</h3>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="image-viewer" id="imageViewer">
+    <button class="close-viewer" id="closeViewer" aria-label="Fermer">&times;</button>
+    <img id="viewerImg" src="" alt="Agrandissement du document">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

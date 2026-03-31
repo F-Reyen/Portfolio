@@ -1,0 +1,399 @@
+/* ========================================================== */
+/* RESET                                                      */
+/* ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================================== */
+/* VARIABLES                                                  */
+/* ========================================================== */
+:root {
+  --bg-main: #050505;
+  --white: #ffffff;
+  --white-soft: rgba(255, 255, 255, 0.84);
+  --white-border: rgba(255, 255, 255, 0.24);
+  --glass: rgba(0, 0, 0, 0.16);
+  --glass-hover: rgba(255, 255, 255, 0.08);
+  --shadow-soft: 0 0 24px rgba(255, 255, 255, 0.08);
+  --shadow-hover: 0 0 30px rgba(255, 255, 255, 0.16);
+}
+
+/* ========================================================== */
+/* BODY                                                       */
+/* ========================================================== */
+body {
+  min-height: 100vh;
+  background: var(--bg-main);
+  font-family: "Orbitron", sans-serif;
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* ========================================================== */
+/* HERO                                                       */
+/* ========================================================== */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ========================================================== */
+/* SCENE                                                      */
+/* ========================================================== */
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ========================================================== */
+/* IMAGE                                                      */
+/* ========================================================== */
+.scene-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 24px;
+  display: block;
+  background: #000;
+}
+
+/* ========================================================== */
+/* OVERLAY                                                    */
+/* ========================================================== */
+.scene-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(0, 0, 0, 0.02) 35%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+  pointer-events: none;
+}
+
+/* ========================================================== */
+/* TITRE PRINCIPAL                                            */
+/* Le plus haut possible                                      */
+/* ========================================================== */
+.scene-title {
+  position: absolute;
+
+  top: 0px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  font-size: clamp(1.8rem, 4vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.14);
+}
+
+/* ========================================================== */
+/* IDENTITE                                                   */
+/* ========================================================== */
+.identity {
+  position: absolute;
+
+  bottom: 8%;
+  right: 18%;
+
+  transform: none;
+
+  z-index: 10;
+  text-align: center;
+
+  width: 260px;
+}
+
+.identity-name {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
+
+  white-space: nowrap;
+}
+
+.identity-role {
+  margin-top: 10px;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--white-soft);
+}
+
+/* ========================================================== */
+/* BLOCS ORBIT                                                */
+/* ========================================================== */
+.orbit-item {
+  position: absolute;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 210px;
+  min-height: 66px;
+  padding: 16px 24px;
+
+  text-decoration: none;
+  color: var(--white);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  border: 1px solid var(--white-border);
+  border-radius: 999px;
+  background: var(--glass);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.orbit-item:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ========================================================== */
+/* POSITIONNEMENT DES BLOCS                                   */
+/* Disposition en grand cercle                                */
+/* ========================================================== */
+
+/* Haut gauche */
+.orbit-presentation {
+  top: 14%;
+  left: 23%;
+}
+
+.orbit-presentation:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Haut droite */
+.orbit-certification {
+  top: 14%;
+  right: 23%;
+}
+
+.orbit-certification:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Milieu gauche */
+.orbit-projet {
+  top: 43%;
+  left: 11%;
+  transform: translateY(-50%);
+}
+
+.orbit-projet:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Milieu droite */
+.orbit-emplacement {
+  top: 43%;
+  right: 11%;
+  transform: translateY(-50%);
+}
+
+.orbit-emplacement:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Bas gauche sous le milieu gauche */
+.orbit-emplacement-left-bottom {
+  top: 67%;
+  left: 18%;
+  transform: translateY(-50%);
+}
+
+.orbit-emplacement-left-bottom:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Bas droite sous le milieu droite */
+.orbit-emplacement-right-bottom {
+  top: 67%;
+  right: 18%;
+  transform: translateY(-50%);
+}
+
+.orbit-emplacement-right-bottom:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* ========================================================== */
+/* TRES GRANDS ECRANS                                         */
+/* ========================================================== */
+@media (min-width: 1600px) {
+  .orbit-presentation {
+    left: 26%;
+  }
+
+  .orbit-certification {
+    right: 26%;
+  }
+
+  .orbit-projet {
+    left: 14%;
+  }
+
+  .orbit-emplacement {
+    right: 14%;
+  }
+
+  .orbit-emplacement-left-bottom {
+    left: 20%;
+  }
+
+  .orbit-emplacement-right-bottom {
+    right: 20%;
+  }
+}
+
+/* ========================================================== */
+/* TABLET                                                     */
+/* ========================================================== */
+@media (max-width: 1100px) {
+  .scene-title {
+    top: 6px;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .orbit-item {
+    min-width: 180px;
+    min-height: 58px;
+    padding: 14px 18px;
+    font-size: 0.78rem;
+  }
+
+  .orbit-presentation {
+    top: 13%;
+    left: 15%;
+  }
+
+  .orbit-certification {
+    top: 13%;
+    right: 15%;
+  }
+
+  .orbit-projet {
+    left: 3%;
+  }
+
+  .orbit-emplacement {
+    right: 3%;
+  }
+
+  .orbit-emplacement-left-bottom {
+    top: 68%;
+    left: 10%;
+  }
+
+  .orbit-emplacement-right-bottom {
+    top: 68%;
+    right: 10%;
+  }
+
+  .identity {
+    bottom: 24px;
+  }
+}
+
+/* ========================================================== */
+/* MOBILE                                                     */
+/* Sur mobile, empilement plus compact mais même logique      */
+/* ========================================================== */
+@media (max-width: 768px) {
+  .scene-title {
+    top: 4px;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .orbit-item {
+    min-width: 122px;
+    min-height: 46px;
+    padding: 10px 12px;
+    font-size: 0.6rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .orbit-presentation {
+    top: 11%;
+    left: 4%;
+  }
+
+  .orbit-certification {
+    top: 11%;
+    right: 4%;
+  }
+
+  .orbit-projet {
+    top: 38%;
+    left: 1%;
+  }
+
+  .orbit-emplacement {
+    top: 38%;
+    right: 1%;
+  }
+
+  .orbit-emplacement-left-bottom {
+    top: 58%;
+    left: 4%;
+  }
+
+  .orbit-emplacement-right-bottom {
+    top: 58%;
+    right: 4%;
+  }
+
+  .identity {
+    bottom: 14px;
+    width: 92vw;
+  }
+
+  .identity-name {
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .identity-role {
+    margin-top: 8px;
+    font-size: 0.68rem;
+    letter-spacing: 0.05rem;
+  }
+}
