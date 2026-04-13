@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND IMAGE */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  color: white;
+
+  background: url("fond.png") no-repeat center center/cover;
+}
+
+/* DARK OVERLAY POUR LISIBILITÉ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+/* CONTENEUR */
+.form-container {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.7),
+    0 0 25px rgba(255,255,255,0.15),
+    0 0 60px rgba(255,255,255,0.08);
+
+  overflow: hidden;
+}
+
+/* TITRE */
+.form-title {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* GROUPES */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* INPUTS */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+  outline: none;
+
+  transition: 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+input:focus,
+textarea:focus {
+  border-color: white;
+  box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+/* ROW */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row .form-group {
+  flex: 1;
+}
+
+/* TEXTAREA */
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* BOUTON */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, #ffffff, #bfbfbf);
+  color: black;
+
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+}

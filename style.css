@@ -189,6 +189,21 @@ body {
 /* Disposition en grand cercle                                */
 /* ========================================================== */
 
+/* Petit bouton CV tout en haut à gauche */
+.orbit-cv {
+  top: 14px;
+  left: 14px;
+  min-width: 68px;
+  min-height: 30px;
+  padding: 6px 12px;
+  font-size: 0.56rem;
+  letter-spacing: 0.08rem;
+}
+
+.orbit-cv:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
 /* Haut gauche */
 .orbit-presentation {
   top: 14%;
@@ -299,6 +314,16 @@ body {
     font-size: 0.78rem;
   }
 
+  .orbit-cv {
+    top: 12px;
+    left: 12px;
+    min-width: 62px;
+    min-height: 28px;
+    padding: 6px 10px;
+    font-size: 0.52rem;
+    letter-spacing: 0.06rem;
+  }
+
   .orbit-presentation {
     top: 13%;
     left: 15%;
@@ -349,6 +374,16 @@ body {
     padding: 10px 12px;
     font-size: 0.6rem;
     letter-spacing: 0.05rem;
+  }
+
+  .orbit-cv {
+    top: 10px;
+    left: 10px;
+    min-width: 54px;
+    min-height: 24px;
+    padding: 4px 8px;
+    font-size: 0.46rem;
+    letter-spacing: 0.04rem;
   }
 
   .orbit-presentation {
