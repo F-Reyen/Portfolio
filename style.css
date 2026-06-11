@@ -225,13 +225,13 @@ body {
 }
 
 /* Milieu gauche */
-.orbit-projet {
+.orbit-projets {
   top: 43%;
   left: 11%;
   transform: translateY(-50%);
 }
 
-.orbit-projet:hover {
+.orbit-projets:hover {
   transform: translateY(-50%) scale(1.03);
 }
 
@@ -269,6 +269,25 @@ body {
 }
 
 /* ========================================================== */
+/* PHOTO-PAGE POUR PROJETS / EMPLACEMENT 1 / EMPLACEMENT 2    */
+/* Sans filtre sombre                                         */
+/* ========================================================== */
+body.page-photo {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background:
+    url("./images/photo-page.png"),
+    #000;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ========================================================== */
 /* TRES GRANDS ECRANS                                         */
 /* ========================================================== */
 @media (min-width: 1600px) {
@@ -280,7 +299,7 @@ body {
     right: 26%;
   }
 
-  .orbit-projet {
+  .orbit-projets {
     left: 14%;
   }
 
@@ -334,7 +353,7 @@ body {
     right: 15%;
   }
 
-  .orbit-projet {
+  .orbit-projets {
     left: 3%;
   }
 
@@ -396,7 +415,7 @@ body {
     right: 4%;
   }
 
-  .orbit-projet {
+  .orbit-projets {
     top: 38%;
     left: 1%;
   }
