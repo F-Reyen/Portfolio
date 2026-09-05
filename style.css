@@ -219,6 +219,48 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
+/* Quatre boutons de chaque côté du portrait. */
+.orbit-column {
+  --orbit-inset: clamp(24px, 4vw, 64px);
+  position: absolute;
+  top: max(110px, 18%);
+  bottom: calc(clamp(106px, 13.2vw, 176px) + 40px);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  width: clamp(210px, 20vw, 280px);
+}
+
+.orbit-column-left {
+  left: 11%;
+}
+
+.orbit-column-right {
+  right: 11%;
+}
+
+.orbit-column .orbit-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.orbit-column .orbit-item:hover {
+  transform: scale(1.03);
+}
+
+.orbit-column-left .orbit-item:first-child,
+.orbit-column-left .orbit-item:last-child {
+  left: var(--orbit-inset);
+}
+
+.orbit-column-right .orbit-item:first-child,
+.orbit-column-right .orbit-item:last-child {
+  right: var(--orbit-inset);
+}
+
 /* ========================================================== */
 /* POSITIONNEMENT DES BLOCS                                   */
 /* Disposition en grand cercle                                */
@@ -355,6 +397,13 @@ body.page-photo {
 /* TABLET                                                     */
 /* ========================================================== */
 @media (max-width: 1100px) {
+  .orbit-column {
+    width: 190px;
+  }
+
+  .orbit-column-left { left: 3%; }
+  .orbit-column-right { right: 3%; }
+
   .scene-title {
     top: 6px;
     font-size: 2rem;
@@ -417,6 +466,14 @@ body.page-photo {
 /* Sur mobile, empilement plus compact mais même logique      */
 /* ========================================================== */
 @media (max-width: 768px) {
+  .orbit-column {
+    --orbit-inset: 2vw;
+    top: 130px;
+    bottom: calc(clamp(70px, 20vw, 110px) + 32px);
+    width: 43%;
+    gap: 10px;
+  }
+
   .scene-title {
     top: 4px;
     font-size: 1.4rem;
