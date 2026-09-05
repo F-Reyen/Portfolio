@@ -61,7 +61,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  transform: scale(1.05);
+  transform: scale(1.02);
   transform-origin: center top;
   display: block;
   background: #000;
@@ -126,6 +126,7 @@ body {
 .affiliation {
   position: absolute;
   bottom: 20px;
+  height: clamp(106px, 13.2vw, 176px);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -148,6 +149,11 @@ body {
   width: clamp(120px, 15vw, 200px);
   height: clamp(106px, 13.2vw, 176px);
   object-fit: contain;
+}
+
+.affiliation-crf .affiliation-logo {
+  width: clamp(90px, 11vw, 145px);
+  height: clamp(80px, 9.7vw, 128px);
 }
 
 .identity-name {
@@ -436,12 +442,12 @@ body.page-photo {
   }
 
   .orbit-presentation {
-    top: 120px;
+    top: 170px;
     left: 4%;
   }
 
   .orbit-certification {
-    top: 120px;
+    top: 170px;
     right: 4%;
   }
 
@@ -472,6 +478,7 @@ body.page-photo {
 
   .affiliation {
     bottom: 12px;
+    height: clamp(70px, 20vw, 110px);
     gap: 6px;
     font-size: clamp(0.8rem, 2.5vw, 1rem);
     letter-spacing: 0.02rem;
@@ -488,6 +495,11 @@ body.page-photo {
   .affiliation-logo {
     width: clamp(70px, 20vw, 110px);
     height: clamp(70px, 20vw, 110px);
+  }
+
+  .affiliation-crf .affiliation-logo {
+    width: clamp(52px, 15vw, 82px);
+    height: clamp(52px, 15vw, 82px);
   }
 
   .identity-name {
