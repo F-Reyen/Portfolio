@@ -1,7 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&display=swap');
-
-/* BASE */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&display=swap');
 
 * {
   margin: 0;
@@ -11,23 +9,18 @@
 
 body {
   background: #080c19;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', Arial, sans-serif;
   overflow-x: hidden;
 }
 
-/* IMAGE DE FOND */
-
 .hero {
-  position: relative;
-
-  width: 100%;
   min-height: 100vh;
   min-height: 100svh;
-
   display: flex;
   align-items: center;
+  overflow: hidden;
 
-  background-image:
+  background:
     linear-gradient(
       90deg,
       rgba(4, 8, 20, 0.93),
@@ -38,186 +31,73 @@ body {
 
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
-  overflow: hidden;
 }
 
-/* POSITION DU TEXTE */
-
 .contenu {
-  position: relative;
-  z-index: 2;
-
   width: 100%;
   padding: 7%;
 }
 
-/* TITRE */
-
 .titre {
   font-size: clamp(1.7rem, 5.7vw, 6.4rem);
   font-weight: 900;
-  letter-spacing: -0.04em;
   line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
-/* COULEUR IDENTIQUE POUR LES 3 LIGNES */
-
 .ligne {
-  display: flex;
+  display: block;
   white-space: nowrap;
-
   color: #ffe5a0;
 
   text-shadow:
-    0 0 10px rgba(255, 187, 0, 0.5),
-    0 0 30px rgba(255, 170, 0, 0.25);
+    0 0 10px rgba(255, 187, 0, 0.4),
+    0 0 30px rgba(255, 170, 0, 0.2);
 }
 
-/* DÉLAIS DES LIGNES */
-
-.ligne-1 {
-  --decalage: 0s;
-}
-
-.ligne-2 {
-  --decalage: 0.7s;
-}
-
-.ligne-3 {
-  --decalage: 1.6s;
-}
-
-/* LETTRES */
+/* ANIMATION DES LETTRES */
 
 .lettre {
-  position: relative;
   display: inline-block;
-
   opacity: 0;
 
   clip-path: inset(0 100% 0 0);
 
-  transform: translateX(-10px);
-  filter: blur(8px);
-
-  animation: revelation 0.85s
+  animation: apparition 0.72s
     cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
+    both;
 
-  animation-delay: calc(
-    0.2s + var(--decalage) + var(--retard)
-  );
+  animation-delay: var(--delai);
 }
 
-/* DÉLAI INDIVIDUEL DE CHAQUE LETTRE */
-
-.lettre:nth-child(1)  { --retard: 0s; }
-.lettre:nth-child(2)  { --retard: 0.1s; }
-.lettre:nth-child(3)  { --retard: 0.2s; }
-.lettre:nth-child(4)  { --retard: 0.3s; }
-.lettre:nth-child(5)  { --retard: 0.4s; }
-.lettre:nth-child(6)  { --retard: 0.5s; }
-.lettre:nth-child(7)  { --retard: 0.6s; }
-.lettre:nth-child(8)  { --retard: 0.7s; }
-.lettre:nth-child(9)  { --retard: 0.8s; }
-.lettre:nth-child(10) { --retard: 0.9s; }
-.lettre:nth-child(11) { --retard: 1s; }
-.lettre:nth-child(12) { --retard: 1.1s; }
-.lettre:nth-child(13) { --retard: 1.2s; }
-.lettre:nth-child(14) { --retard: 1.3s; }
-.lettre:nth-child(15) { --retard: 1.4s; }
-
-/* ESPACE ENTRE LES MOTS */
-
-.espace {
-  display: inline-block;
-  width: 0.32em;
-  flex-shrink: 0;
-}
-
-/* APPARITION GAUCHE À DROITE */
-
-@keyframes revelation {
-
+@keyframes apparition {
   0% {
     opacity: 0;
     clip-path: inset(0 100% 0 0);
     transform: translateX(-10px);
-    filter: blur(8px);
+    filter: blur(8px) brightness(2);
   }
 
-  45% {
+  60% {
     opacity: 1;
-    filter: blur(3px);
+    clip-path: inset(0 15% 0 0);
+    transform: translateX(-2px);
+    filter: blur(1px) brightness(1.5);
   }
 
   100% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
     transform: translateX(0);
-    filter: blur(0);
+    filter: none;
   }
-
 }
 
-/* EFFET LASER SUR CHAQUE LETTRE */
-
-.lettre::after {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -10%;
-
-  width: 3px;
-
-  background: #fffbd5;
-
-  box-shadow:
-    0 0 8px #ffffff,
-    0 0 15px #ffd000,
-    0 0 30px #ff9d00;
-
-  opacity: 0;
-  pointer-events: none;
-
-  animation: laser 0.85s ease-out both;
-  animation-delay: inherit;
-}
-
-/* BALAYAGE LUMINEUX */
-
-@keyframes laser {
-
-  0% {
-    left: 0%;
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    left: 110%;
-    opacity: 0;
-  }
-
-}
-
-/* BARRE LUMINEUSE ALLONGÉE DE 50% */
+/* BARRE DORÉE */
 
 .barre {
   width: min(675px, 100%);
   height: 3px;
-
   margin-top: 35px;
 
   background: linear-gradient(
@@ -238,29 +118,26 @@ body {
 
   animation: dessinerBarre 1.5s
     cubic-bezier(0.22, 1, 0.36, 1)
-    4.3s forwards;
+    both;
+
+  animation-delay: var(--delai-barre, 5s);
 }
 
-/* ANIMATION DE LA BARRE */
-
 @keyframes dessinerBarre {
-
   from {
-    transform: scaleX(0);
     opacity: 0;
+    transform: scaleX(0);
   }
 
   to {
-    transform: scaleX(1);
     opacity: 1;
+    transform: scaleX(1);
   }
-
 }
 
-/* VERSION MOBILE */
+/* MOBILE */
 
 @media (max-width: 768px) {
-
   .hero {
     background-position: 65% center;
   }
@@ -276,5 +153,16 @@ body {
   .barre {
     margin-top: 25px;
   }
+}
 
+/* ACCESSIBILITÉ */
+
+@media (prefers-reduced-motion: reduce) {
+  .lettre, .barre {
+    animation: none !important;
+    opacity: 1;
+    filter: none;
+    clip-path: none;
+    transform: none;
+  }
 }
